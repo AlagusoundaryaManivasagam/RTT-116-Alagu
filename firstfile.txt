@@ -3,3 +3,5 @@ the purpose is to check modification , how it works
 Check 1
 The is adding more text
 Check 2
+This is adding third line
+Check 3
