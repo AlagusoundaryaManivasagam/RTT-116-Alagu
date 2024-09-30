@@ -1,3 +1,5 @@
 Checking text
 the purpose is to check modification , how it works
 Check 1
+The is adding more text
+Check 2
