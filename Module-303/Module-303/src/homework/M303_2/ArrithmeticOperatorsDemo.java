@@ -1,0 +1,43 @@
+package homework.M303_2;
+
+public class ArrithmeticOperatorsDemo {
+    public static void main(String[] args) {
+        int x, y = 10, z = 5;
+        x = y + z;
+        System.out.println("y+z = " + x);
+        x = y - z;
+        System.out.println("y-z = " + x);
+        x = y * z;
+        System.out.println("y*z = " + x);
+        x = y / z;
+        System.out.println("y/z" + x);
+        x = y % z;
+        System.out.println("y%z " + x);
+        x = y++;
+        System.out.println("y++ = " + x);
+        x = ++z;
+        System.out.println("++y = " + x);
+        x = -y;
+        System.out.println("-y=" + x);
+        // Some examples of special Cases
+        //this is OVERFLOW
+        System.out.println("Max integer value is ="+ Integer.MAX_VALUE);
+        int tooBig = Integer.MAX_VALUE + 1; // -2147483648 which is
+        // Integer.MIN_VALUE.
+        System.out.println("tooBig becomes " + tooBig);
+        //This is UNDERFLOW
+        System.out.println("Min integer value is ="+ Integer.MIN_VALUE);
+        int tooSmall = Integer.MIN_VALUE - 1; // 2147483647 which is
+        // Integer.MAX_VALUE.
+
+        System.out.println("tooSmall becomes " + tooSmall);
+        System.out.println(4.0 / 0.0); // Prints: Infinity
+        System.out.println(-4.0 / 0.0); // Prints: -Infinity
+        System.out.println(0.0 / 0.0); // Prints: NaN
+        double d1 = 12.0 / 8; // result: 1 by integer division. The value of d1 becomes 1.0.
+        double d2 = 12.0F / 8.0; // result: 1.5
+        System.out.println("d1 is " + d1);
+        System.out.println("d2 is " + d2);
+
+    }
+}
