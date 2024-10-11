@@ -41,15 +41,13 @@ public class Coffee_shop {
         System.out.println("3) Checkout");
         System.out.println("4) Exit");
         System.out.println("\n Enter Selection :");
-        try{
-        int selection = scanner.nextInt();
+        try {
+            int selection = scanner.nextInt();
             return selection;
-        }
-        catch ( Exception e){
-            System.out.println("Invalid response "+ e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Invalid response " + e.getMessage());
             return -1;
-        }
-        finally {
+        } finally {
             scanner.nextLine();
         }
 
@@ -62,14 +60,25 @@ public class Coffee_shop {
         System.out.println("Enter a product number:");
         int selection = scanner.nextInt();
         scanner.nextLine();
-        if(selection>=1 && selection<= products.size()) {
-            //add product to cart
-            Product p = products.get(selection - 1);
-            cart.add(p);
-            System.out.println("Added " + p.getName() + " to your cart.\n");
-        }else{
+        System.out.println("How many would you like to order?");
+        int number = scanner.nextInt();
+        scanner.nextLine();
+        int n = number;
+        String s = "";
+        if (selection >= 1 && selection <= products.size()) {
+            while (n > 0) {
+                //add product to cart
+                Product p = products.get(selection - 1);
+                cart.add(p);
+                s = p.getName();
+                n--;
+            }
+            System.out.println("Added " + number + " " + s + " to your cart.\n");
+
+        } else {
             System.out.println("Invalid response");
         }
+
         //how may do you want to buy
         //make adjustment to quantity on product
 
@@ -80,9 +89,51 @@ public class Coffee_shop {
         //List the items in the cart
         System.out.println("============= Items in your cart ==========");
         double subtotal = 0.0;
+        int n1 = 0;
+        int n2 = 0;
+        int n3 = 0;
+        int n4 = 0;
         for (Product item : cart) {
-            System.out.println(item.getName() + " \t $" + item.getPrice());
-            subtotal = subtotal + item.getPrice();
+            if (item.getName().equalsIgnoreCase("Small Coffee")) {
+                n1++;
+            }
+            if (item.getName().equalsIgnoreCase("Large Coffee")) {
+                n2++;
+            }
+            if (item.getName().equalsIgnoreCase("Sugar Cookie")) {
+                n3++;
+            }
+            if (item.getName().equalsIgnoreCase("Egg Sandwich")) {
+                n4++;
+            }
+        }
+        System.out.println("Item name\t\tQuantity\t\tprice");
+        int number1 = 1;
+        int number2 = 1;
+        int number3 = 1;
+        int number4 = 1;
+        for (Product item : cart) {
+            if (item.getName().equalsIgnoreCase("Small Coffee") && number1 == 1) {
+                System.out.println(item.getName() + " \t\t " + n1 + "\t\t\t$" + (item.getPrice() * n1));
+                subtotal = subtotal + item.getPrice() * n1;
+                number1 = 0;
+            }
+            if (item.getName().equalsIgnoreCase("Large Coffee") && number2 == 1) {
+                System.out.println(item.getName() + "\t \t " + n2 + "\t\t\t$" + (item.getPrice() * n2));
+                subtotal = subtotal + item.getPrice() * n2;
+                number2 = 0;
+            }
+            if (item.getName().equalsIgnoreCase("Sugar Cookie") && number3 == 1) {
+                System.out.println(item.getName() + " \t\t " + n3 + "\t\t\t$" + (item.getPrice() * n3));
+                subtotal = subtotal + item.getPrice() * n3;
+                number3 = 0;
+            }
+            if (item.getName().equalsIgnoreCase("Egg Sandwich") && number4 == 1) {
+                System.out.println(item.getName() + "\t \t " + n4 + "\t\t\t$" + (item.getPrice() * n4));
+                subtotal = subtotal + item.getPrice() * n4;
+                number4 = 0;
+            }
+
         }
         System.out.println();
         System.out.println("Subtotal\t\t $" + subtotal);
@@ -120,8 +171,8 @@ public class Coffee_shop {
 
                 System.exit(0);
 
-            }else {
-                System.out.println(" Invalid command entered :"+ selection+"\n");
+            } else {
+                System.out.println(" Invalid command entered :" + selection + "\n");
             }
         }
 
