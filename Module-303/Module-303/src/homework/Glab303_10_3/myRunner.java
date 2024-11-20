@@ -17,7 +17,7 @@ public class myRunner {
         System.out.println(shapeCircleObj);  // Run circle's toString()
         // Use instanceof operator for Validation
         System.out.println(shapeCircleObj instanceof Circle); // true
-
+        System.out.println(shapeCircleObj instanceof Shape);
         System.out.println("+++++++++++++++++");
         Shape shapeRectangleObj = new Rectangle("Red"); //UpCasting
         shapeRectangleObj.displayshapName();
@@ -27,7 +27,7 @@ public class myRunner {
         System.out.println(shapeRectangleObj);  // Run Rectangle's toString()
         // Use instanceof operator for Validation
         System.out.println(shapeRectangleObj instanceof Rectangle); // true
-
+        System.out.println(shapeRectangleObj instanceof Shape);
         System.out.println("--------------------");
         Shape shapeTriangleObj = new Triangle("Blue"); //UpCasting
         shapeTriangleObj.displayshapName();
@@ -35,6 +35,8 @@ public class myRunner {
         shapeTriangleObj.setBase(15);
         System.out.println("Area of Triangle is " + shapeTriangleObj.getArea());
         System.out.println(shapeTriangleObj);  // Run Triangle's toString()
+        System.out.println(shapeTriangleObj instanceof Triangle);
+        System.out.println(shapeTriangleObj instanceof Shape);
     }
 
 }

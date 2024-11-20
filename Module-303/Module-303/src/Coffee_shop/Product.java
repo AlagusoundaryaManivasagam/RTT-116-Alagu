@@ -11,6 +11,18 @@ public class Product {
         this.quantity = quantity;
     }
 
+    public Product() {
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                '}';
+    }
+
     public String getName() {
         return name;
     }

@@ -34,6 +34,11 @@ public class Coffeshop {
         Product p5 = new Product("Ginger Cookie", 5.99, 0);
         products.add(p5);
 
+        //load products from file
+        List<Product> loaded = new ProductLoader().LoadProducts();
+        //add all products
+        products.addAll(loaded);
+
         //the original list can be modified by using sort
         products.sort(Comparator.comparing(Product::getName));
         products.forEach(e-> System.out.println(e));
@@ -302,7 +307,12 @@ public class Coffeshop {
                 System.exit(0);
 
             }else if(selection == 6){
-                removeItem();
+                if(!cart.isEmpty()) {
+                    removeItem();
+                }
+                else{
+                    System.out.println("Cart is empty");
+                }
             }
             else {
                 System.out.println(" Invalid command entered :" + selection + "\n");

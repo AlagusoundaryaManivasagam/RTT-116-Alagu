@@ -25,6 +25,7 @@ public class myRunner {
         System.out.println(shapeCircleObj);  // Run circle's toString()
         // Use instanceof operator for Validation
         System.out.println(shapeCircleObj instanceof Circle); // true
+        System.out.println(shapeCircleObj instanceof Shape);
         System.out.println(sObj instanceof Circle); // false because Shape is not a Circle
 
         System.out.println("--------------------");
@@ -36,6 +37,7 @@ public class myRunner {
         System.out.println(shapeRectangleObj);  // Run Rectangle's toString()
         // Use instanceof operator for Validation
         System.out.println(shapeRectangleObj instanceof Rectangle); // true
+        System.out.println(shapeRectangleObj instanceof Shape);
         System.out.println(sObj instanceof Rectangle); // false because Shape is not a Rectangle
 
         System.out.println("--------------------");
@@ -48,14 +50,21 @@ public class myRunner {
 
         // Use instanceof operator for Validation
         System.out.println(shapeTriangleObj instanceof Triangle); // true
+        System.out.println(shapeTriangleObj instanceof Shape);
         System.out.println(sObj instanceof Triangle); // false because Shape is not a Triangle
         System.out.println("--------------------");
 
         Cylinder cylinderShape = new Cylinder(3); //UpCasting
         cylinderShape.displayShapeName();
         cylinderShape.setHeight(3);
-        System.out.println("Area of Cylinder is " + cylinderShape.getVolumne());
+        System.out.println("Area of Cylinder is " + cylinderShape.getVolume());
         System.out.println(cylinderShape);  // Run cylinderShape's toString()
+        System.out.println(cylinderShape instanceof Cylinder);
+        System.out.println(cylinderShape instanceof Circle);
+        System.out.println(cylinderShape instanceof Shape);// child class object is always object of parent
+        //and can access parent class members
+        // but parent class object does not become child classobject  and cannot access child class members
+
     }
 
 }

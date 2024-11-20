@@ -1,6 +1,6 @@
 package homework.Glab303_9_2;
 
-public class Doctor {
+public class Doctor303_9_2 {
     String DoctorName;
     String Department;
     public void Doctor_Details() {
