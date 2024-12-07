@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src =  
+"https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"> 
+        </script> 
+
+</head>
+<body>
+    <style>
+        span{
+            padding: 10px;
+        }
+    </style>
+    <div>
+        <button id="button">Counter1</button>
+        <span>counter for 1</span><span id="span">0</span>
+    </div>
+    <div>
+        <button id="button1">counter2</button>
+        <span>counter for 1</span><span id="span1">0</span>
+        <span>counter for 2</span><span id="span2">0</span>
+        
+    </div>
+    <div>
+        <button id="button2">counter3</button>
+    </div>
+    <div id="myDiv"></div>
+    <script>
+        $("#button").on("click",function(event){
+            var t = $("#span").text();
+            var n= parseInt(t);
+            $("#span").text(n+1);
+            var t3=$("#span1").text();
+            var n3=parseInt(t3);
+            $("#span1").text(n3+1);
+        })
+        $("#button1").on("click",function(event){
+            var t1 = $("#span").text();
+            var n1= parseInt(t1);
+            $("#span1").text(n1);
+            var t2 = $("#span2").text();
+            var n2= parseInt(t2);
+            $("#span2").text(n2+1);
+        })
+        var i=1;
+    
+        $("#button2").on("click",function(event){
+            var newSpan=$('<span>').text('counter'+i);
+            var counter=$('<span>').attr('id','ns'+i).text(0);
+            $("#myDiv").append(newSpan);
+            $("#myDiv").append(counter);
+            $("#myDiv").append('<br/>');
+            i++;
+        })
+        $("#button2").on("click",function(event){
+            for(var j=1; j<=i; j++){
+                var spanId='ns'+j;
+                var t4=$('#'+spanId).text();
+                var n4=parseInt(t4);
+                $('#'+spanId).text(n4+1);
+             
+            }
+        })
+
+    </script>
+</body>
+</html>
