@@ -1,0 +1,24 @@
+.boxmodel {
+
+    background-color: rgba(230, 238, 228, 0.93);
+    padding: 20px;
+    /*margin: auto;
+        width: 50%;*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid wheat;
+    border-radius: 5%;
+    box-shadow: 5px 5px 5px;
+}
+td p{
+    text-align: right;
+}
+.s{
+    color: red;
+    font-size: smaller;
+}
+input{
+    border-radius: 5px;
+}

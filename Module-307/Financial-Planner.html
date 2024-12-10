@@ -19,30 +19,57 @@
                 border-radius: 5%;
                 box-shadow: 5px 5px 5px ;
         }
+        input{
+            border-radius: 5px;
+        }
+        .s{
+            color: red;
+            font-size: smaller;
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
         
        
     </style>
-    
+    <script src =  
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"> 
+    </script>
 </head>
 <body style="background: rgb(216,174,238);
 background: radial-gradient(circle, rgba(216,174,238,1) 0%, rgba(55,130,219,1) 100%);">
     
-     <div class ="boxmodel" style="width: 300px; " ;><h1 align ="center">Login</h1>
+    <div class ="boxmodel" style="width: 300px; " >
+    <h1 align ="center">Login</h1>
     <form align="center" style="font-family: sans-serif;">
         <p style="margin: 0%;"><b>User name</b></p>
-        <input  type="text" style="color: rgb(173, 172, 171);" name="User name" value="Please enter valid User Name">
-        <br/><br/>
+        <input id="username" type="text" name="User name" placeholder="User Name">
+        <div id="ue" class="s"></div><br/>
         <p style="margin: 0%;"><b>Password</b></p>
-        <input  type="text" style="color: rgb(173, 172, 171);" name="Password" value="Please enter valid Password">
-        <br/><br/>
-        <a href="Financial-Planner1.html"><button type="button"><b>sign-in</b></button></a>
+        <input id="password" type="text" name="Password" placeholder="Password">
+        <div id="pe" class="s"></div><br/>
+        <button id="signin" type="submit"><b>sign-in</b></button>
         <br/><br/>
         <a>Forgot Password?</a>
         <br/><br/>
-        <a>New User! Sign-up</a>
+        <a href="Financial-Planner5.html">New User! Sign-up</a>
     </form>
     </div>
-     
+    <script>
+        $("#signin").on("click",function(event){
+            event.preventDefault();
+            let username= $("#username").val();
+            if(username ==""){
+                $("#username").css("border-color","red");
+                $("#ue").text("User name cannot be empty");
+            }
+            let password= $("#password").val();
+            if(password == ""){
+                $("#password").css("border-color", "red");
+                $("#pe").text("Password cannot be empty");
+            }
+        })
+    </script>
      
 </body>
 </html>
