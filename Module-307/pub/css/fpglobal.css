@@ -1,0 +1,9 @@
+body{
+    /*background: rgb(216,174,238);
+background: radial-gradient(circle, rgba(216,174,238,0.5606617647058824) 0%, rgba(55,190,219,0.5242471988795518) 100%);*/
+background-image: url('../../piggybank.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}

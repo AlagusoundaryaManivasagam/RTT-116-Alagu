@@ -1,75 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .boxmodel{
-            
-            background-color:rgba(230, 238, 228, 0.93);
-                padding: 20px;
-                /*margin: auto;
+        .boxmodel {
+
+            background-color: white;
+            padding: 20px;
+            /*margin: auto;
                 width: 50%;*/
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%,-50%);
-                border: 1px solid wheat; 
-                border-radius: 5%;
-                box-shadow: 5px 5px 5px ;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid wheat;
+            box-shadow: 5px 5px 5px;
         }
-        input{
-            border-radius: 5px;
-        }
-        .s{
+
+        
+
+        .s {
             color: red;
             font-size: smaller;
             font-family: "Roboto", sans-serif;
             font-weight: 400;
             font-style: normal;
         }
-        
-       
     </style>
-    <script src =  
-    "https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
     </script>
+    <link rel="stylesheet" href="pub\css\fpglobal.css">
 </head>
-<body style="background: rgb(216,174,238);
-background: radial-gradient(circle, rgba(216,174,238,1) 0%, rgba(55,130,219,1) 100%);">
-    
-    <div class ="boxmodel" style="width: 300px; " >
-    <h1 align ="center">Login</h1>
-    <form align="center" style="font-family: sans-serif;">
-        <p style="margin: 0%;"><b>User name</b></p>
-        <input id="username" type="text" name="User name" placeholder="User Name">
-        <div id="ue" class="s"></div><br/>
-        <p style="margin: 0%;"><b>Password</b></p>
-        <input id="password" type="text" name="Password" placeholder="Password">
-        <div id="pe" class="s"></div><br/>
-        <button id="signin" type="submit"><b>sign-in</b></button>
-        <br/><br/>
-        <a>Forgot Password?</a>
-        <br/><br/>
-        <a href="Financial-Planner5.html">New User! Sign-up</a>
-    </form>
+
+<body >
+
+    <div class="boxmodel" style="width: 300px; ">
+        <h1 align="center">Login</h1>
+        <form align="center" style="font-family: sans-serif;">
+            <p style="margin: 0%;"><b>User name</b></p>
+            <input id="username" type="text" name="User name" placeholder="User Name">
+            <div id="ue" class="s"></div><br />
+            <p style="margin: 0%;"><b>Password</b></p>
+            <input id="password" type="text" name="Password" placeholder="Password">
+            <div id="pe" class="s"></div><br />
+            <button id="signin" type="submit"><b>sign-in</b></button>
+            <br /><br />
+            <a>Forgot Password?</a>
+            <br /><br />
+            <a href="Financial-Planner5.html">New User! Sign-up</a>
+        </form>
     </div>
     <script>
-        $("#signin").on("click",function(event){
+        $("#signin").on("click", function (event) {
             event.preventDefault();
-            let username= $("#username").val();
-            if(username ==""){
-                $("#username").css("border-color","red");
+            let username = $("#username").val();
+            if (username == "") {
+                $("#username").css("border-color", "red");
                 $("#ue").text("User name cannot be empty");
             }
-            let password= $("#password").val();
-            if(password == ""){
+            let password = $("#password").val();
+            if (password == "") {
                 $("#password").css("border-color", "red");
                 $("#pe").text("Password cannot be empty");
             }
         })
     </script>
-     
+
 </body>
+
 </html>

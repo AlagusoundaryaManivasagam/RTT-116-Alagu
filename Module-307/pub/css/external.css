@@ -1,0 +1,23 @@
+.definedexternal{
+    /*These can be used just like internal styling*/
+    background-color: blueviolet;
+}
+h1{
+    background-color: bisque;
+}
+
+.definedexternal{
+    /* the order of the file*/
+    padding: 15px;
+}
+.pseudo{
+    /*This is when mouse is not over there*/
+    background-color: aliceblue;
+}
+.pseudo:hover{
+    /*This is used when mouse over is done*/
+    background-color: blue;
+}
+.pseudo:active{
+    background-color: green;
+}

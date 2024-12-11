@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="pub\css\sbaexternal.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+    </script>
+    <link rel="stylesheet" href="pub\css\fpglobal.css">
+
+    
+</head>
+
+<body >
+    <div class="boxmodel" style="width: 300px; ">
+        <h2 align="center">Sign-up</h2>
+        <form align="center" style="font-family: sans-serif;">
+            <table>
+                <tr>
+                    <td>
+                        <p>User name</p>
+                    </td>
+                    <td><input id="username" type="text" name="username" placeholder="User name">
+                        <div id="ue" class="s"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Email</p>
+                    </td>
+                    <td><input id="email" type="text" name="email" placeholder="Email">
+                        <div id="ee" class="s"></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p>Enter Password</p>
+                    </td>
+                    <td><input id="password" type="text" name="password" placeholder="Password">
+                        <div id="pe" class="s"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Confirm Password</p>
+                    </td>
+                    <td><input id="cpassword" type="text" name="cpassword" placeholder="Confirm Password">
+                        <div id="cpe" class="s"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Gender</p></td>
+                    <td>
+                        <input type="radio">Male
+                        <input type="radio">Female
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="left"><input type="checkbox">I Agree to terms and conditions</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button id="signup" type="submit"><b>Sign-up</b></button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+        $("#signup").on("click",function(event){
+    event.preventDefault();
+    let usn= $("#username").val();
+    if(usn==""){
+        $("#username").css("border-color","red");
+        $("#ue").text("User name cannot be empty");
+    }
+    let password= $("#password").val();
+    if(password == ""){
+        $("#password").css("border-color", "red");
+        $("#pe").text("Password cannot be empty");
+    }
+    let email= $("#email").val();
+    if(email ==""){
+        $("#email").css("border-color", "red");
+        $("#ee").text("Email cannot be empty");
+    }else if(!(/@/.test(email))){
+        $("#email").css("border-color", "red");
+        $("#ee").text("Email should contain '@'");
+    }
+    let cpassword = $("#cpassword").val();
+    if(cpassword == ""){
+        $("#cpassword").css("border-color","red");
+        $("#cpe").text("This field cannot be empty");
+    }else if(cpassword != password){
+        $("#cpassword").css("border-color","red");
+        $("#cpe").text("Entry doesn't match the entered password");
+    }else if(cpassword==password){
+        $("#cpe").text("Entry matches the entered password").css("color","black");
+    }
+    
+})
+       
+    </script>
+</body>
+
+</html>
