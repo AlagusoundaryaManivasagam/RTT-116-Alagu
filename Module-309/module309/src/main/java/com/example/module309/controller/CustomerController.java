@@ -26,4 +26,12 @@ public class CustomerController {
         }
         return response;
     }
+    @GetMapping("/customer/create")
+    public ModelAndView create() {
+        ModelAndView response = new ModelAndView();
+        response.setViewName("customer/create");
+        return response;
+    }
+
+
 }

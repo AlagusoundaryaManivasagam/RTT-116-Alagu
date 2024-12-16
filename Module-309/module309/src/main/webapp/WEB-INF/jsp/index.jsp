@@ -1,15 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!--jsp file is converted to java servlet
-tag library does this process-->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<jsp:include page="include/header.jsp"/>
     <h1>First Page</h1>
     <table border="1">
         <tr>
@@ -28,5 +18,4 @@ tag library does this process-->
             </tr>
         </c:forEach>
     </table>
-</body>
-</html>
+<jsp:include page="include/footer.jsp"/>
