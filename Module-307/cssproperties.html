@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--typically we import external style sheet here. But it can go anywhere in the document.
+    we do it here for seo and reduce time to first render of page-->
+    <link rel="stylesheet" href="pub\css\external.css">
+</head>
+<body>
+    <!--It is adviceable to have global reference(common for all page) in the external css.
+    Then in individual page put the styling as internal styling-->
+    <!--this is internal styling-->
+    <style>
+     /* This will apply the css property to all p and span tags
+     Here p and span are selectors*/   
+        p, span{
+            color: red;
+            background-color:yellow;
+            font-weight: lighter;
+            font-family: "Montserrat", sans-serif;
+            border-radius: 10px;
+        }
+        .customclass{
+            color: blue;
+            padding-bottom: 15px;
+            background-color: aliceblue;
+            margin-bottom: 15px;
+            margin: 10px 10px 10px 10px;/*top right bottom left*/
+        }
+        #anything{
+            background-color: aliceblue;
+        }
+    </style>
+    <h1>CSS Properties</h1>
+    <p>This is some text</p>
+    <p>This is text 2</p>
+    link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <span>This is span notice how the background color ends where the text ends</span>
+    <p style="color: black;"> This is inline styling and this overrides internal and external styling</p>
+    <p class="customclass">This uses customclass</p>
+    <div class="customclass">This div also uses the class attriobute and custom class value</div>
+    
+    <div style="text-align: right;" id="anything"> This is div with id anything</div>
+    <div id="anything"> This is another div with id anything using same id is 
+        not adviceable if needed use diff classes because javascript
+         might fail. </div>
+    <div class="definedexternal">this is from external style sheet</div>
+    <div class="pseudo"> This is pseudo element</div>
+    <!--element can be hidden by using dislpay-->
+    <div style="display: none;">Thiswill not be displayed</div>
+</body>
+</html>

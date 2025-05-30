@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id = "header">This is the header</h1>
+    <p id="paragraph">This is paragraph
+    </p>
+    <p class="className">This is a second paragraph</p>
+    <span class="className">This is span</span>
+    firstname <input style="box-shadow: 5px 5px 5px;" id="firstName" name="firstName" type="text">
+    firstname <input style="box-shadow: 5px 5px 5px;" id="firstName1" name="firstName" type="text">
+    <script>
+        //most of the time we want to wait to run the js on document ready.
+        //here the script as at end of file.
+        // if we want it on top of file we need to put some additional code to tell js to 
+        //wait till code is ready.
+        // find by id is most used and most important and similar to primary key of DB
+        let h = document.getElementById("firstName");
+        let h1= document.querySelector('#firstName');
+        console.log(h);
+        //h.remove();
+        let p = document.getElementById("paragraph");
+        console.log(p);
+        console.log("before =" + p.innerText);
+        p.innerText = "new text entered by javascript in the web page replacing previous message(This is paragraph)"
+        console.log("After = " +p.innerText);
+        // innerHTML let us to change the 
+        p.innerHTML = "<b><i> This is new text with HTML properties included</i></b>";
+        console.log("after inner html =" + p.innerHTML)
+        let n= document.getElementsByName("firstName");
+        console.log(n);
+        //# pound sign or hashtag, and it shows id in the console
+        // hashtag in css means id
+        //HTML tagname is passed
+        let ps = document.getElementsByTagName("p");
+        let p1= document.querySelector('p');
+        let cp= document.querySelector("p, span");
+        console.log(ps);
+        //finding element by calss name
+        // find by classname is second most used
+        let c = document.getElementsByClassName("className");
+        let c1 = document.querySelector('.className');
+        console.log(c);
+        //result is p.className because classnames begin with .classname
+   </script>
+    <style>
+        p, span{
+            background-color: aqua;
+        }
+
+        #header{
+            background-color: blue;
+        }
+    </style>
+</body>
+</html>

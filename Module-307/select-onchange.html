@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <select name="cars" id="cars">
+        <option value="1">Volvo</option>
+        <option value="2" selected>Saab</option>
+        <option value="3">Mercedes</option>
+        <option value="4">Audi</option>
+      </select>
+</body>
+<script>
+    $("#cars").on("change",function(){
+        var displayName = $('#cars').find(":selected").text();
+        var value = $('#cars').find(":selected").val();
+    })
+</script>
+</html>

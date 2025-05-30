@@ -1,5 +1,7 @@
 package com.example.module309.database.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.google.gson.annotations.Expose;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -24,14 +26,17 @@ public class Customer implements Serializable {
     @Column(name = "id")
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "sales_rep_employee_id")
+    @EqualsAndHashCode.Exclude
+    @JsonIgnore
     @ToString.Exclude
     private Employee employee;
 
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
     @ToString.Exclude
+    @JsonIgnore
     private Set<Order> orders;
 
 
@@ -65,21 +70,24 @@ public class Customer implements Serializable {
     @Column(name = "country")
     private String country;
 
-    @Column(name = "sales_rep_employee_id",insertable=false, updatable=false)
+    @Column(name = "sales_rep_employee_id", insertable = false, updatable = false)
     private Integer salesRepEmployeeId;
 
     @Column(name = "credit_limit", columnDefinition = "decimal")
-    private double creditLimit;
+    private Double creditLimit;
     //@Column(name = "created")
     //@Temporal(TemporalType.TIMESTAMP)
     //private Date created;
 
+    @Column(name = "image_url")
+    private String imageUrl;
 
     @Override
     public String toString() {
         return "Customer{" +
                 "id=" + id +
                 ", employee=" + employee +
+                ", orders=" + orders +
                 ", customerName='" + customerName + '\'' +
                 ", contactLastname='" + contactLastname + '\'' +
                 ", contactFirstname='" + contactFirstname + '\'' +
@@ -92,6 +100,7 @@ public class Customer implements Serializable {
                 ", country='" + country + '\'' +
                 ", salesRepEmployeeId=" + salesRepEmployeeId +
                 ", creditLimit=" + creditLimit +
+                ", imageUrl='" + imageUrl + '\'' +
                 '}';
     }
 }

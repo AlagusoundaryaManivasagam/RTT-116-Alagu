@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .headerstyle{
+        text-decoration: underline;
+    }
+    .header{
+        /* this is second priority */
+        /*color: yellow;*/
+        color: yellow !important;
+
+        text-decoration: underline;
+    }
+</style>
+<body>
+    <h1 style = "color: brown;" id="header">This the header</h1>
+</body>
+<script>
+    //query from document
+    let h = document.querySelector('#header');
+    //h.style.<any css property>
+    // This is first priority
+    //internal css class will have highest presidence 
+    //external css can have the next presidence
+    //!imporatant can take the presidence to top 
+    h.style.color = 'black';
+    //real css property is background-color
+    //which cannot be done by js it gets converted to camelcase.
+    h.style.backgroundColor = 'blue';
+    h.style.fontSize = '50px';
+    // adding a css class 
+    h.classList.add("headerstyle");
+    // removing a css class
+    h.classList.remove("headerstyle");
+    h.classList.add("header");
+
+</script>
+</html>

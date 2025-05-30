@@ -32,9 +32,19 @@ group by customer_id;
 
 
 -- I want to see all of the products that have never been ordered - subquery using not in
+select id as products_not_ordered
+ from products 
+ where id not in (select product_id 
+from orderdetails
+group by product_id);
 
+select product_id 
+from orderdetails
+group by product_id;
 
 -- I want to see all customers that have made an order that has more than 3 products in the order regardless of quantity -  I think this can be done using a subquery in the having
+select id 
+
 
 -- I want to see any customer that has made an order greater than $50,000 - this subquery in having
 

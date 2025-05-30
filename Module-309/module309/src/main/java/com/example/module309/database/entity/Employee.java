@@ -46,7 +46,7 @@ public class Employee implements Serializable {
     private String jobTitle;
 
     @Column(name = "vacation_hours")
-    private int vacationHours;
+    private Integer vacationHours;
 
     @Column(name = "profile_image_url")
     private String profileImageUrl;
@@ -64,7 +64,6 @@ public class Employee implements Serializable {
         this.vacationHours = vacationHours;
         this.profileImageUrl = profileImageUrl;
     }
-
 
 
     public Integer getId() {
@@ -115,11 +114,11 @@ public class Employee implements Serializable {
         this.email = email;
     }
 
-    public int getReportsTo() {
+    public Integer getReportsTo() {
         return reportsTo;
     }
 
-    public void setReportsTo(int reportsTo) {
+    public void setReportsTo(Integer reportsTo) {
         this.reportsTo = reportsTo;
     }
 
@@ -131,11 +130,11 @@ public class Employee implements Serializable {
         this.jobTitle = jobTitle;
     }
 
-    public int getVacationHours() {
+    public Integer getVacationHours() {
         return vacationHours;
     }
 
-    public void setVacationHours(int vacationHours) {
+    public void setVacationHours(Integer vacationHours) {
         this.vacationHours = vacationHours;
     }
 

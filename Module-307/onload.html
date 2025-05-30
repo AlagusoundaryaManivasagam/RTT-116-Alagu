@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<script>
+    //this will not execute because there is no header loaded at this time
+     $("#header").css("color", "blue");
+</script>
+<script>
+
+    // its like a event listener
+    // works only after the entire document is loaded and finally this function will execute.
+    //when we are using an event listener no need for onload because
+    //event can happen only after the document is loaded
+    $(document).ready(function(){
+        console.log("This prints after because it only runs when the document is ready")
+        $("#header").css("color", "red");
+    });
+
+</script>
+<body>
+    
+    <h1 id="header">On Load Demo</h1>
+</body>
+<script>
+    console.log("Runs before document is ready");
+</script>
+</html>

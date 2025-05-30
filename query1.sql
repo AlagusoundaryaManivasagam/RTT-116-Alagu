@@ -40,3 +40,11 @@ select * from customers where credit_limit>10000 and credit_limit<50000;
 -- any name starting with J --
 select * from customers where contact_firstname like '%nn%';
 select * from customers where contact_firstname like '%h%';
+select * from products;
+select * from productlines;
+select * from customers where contact_lastname = 'Young';
+select* from customers;
+select * from orderdetails where order_id =10100;
+select * from orders;
+select * from employees;
+select*from offices;

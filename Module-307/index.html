@@ -1,11 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tab Title</title>
 </head>
+
 <body>
-   <h1>This is the page title</h1> 
+    <h1>This is the page title </h1>
+    <h2>This is smaller than h1</h2>
+    <h3>This is smaller than h2</h3>
+    <h4>This is smaller than h3</h4>
+    <h5>This is smaller than h4</h5>
+    <h6>This is smaller than h5</h6>
+    <p>paragraph for some text
+
+
+        <br /> The slash means the tag means self terminating <br>
+        What is happening now a
+        <b> very important its bold</b>
+        <u>underline</u>
+        <I> italic </I>
+    </p>
+    <div>
+    <ul>
+        <li>point 1</li>
+        <li>point 2</li>
+
+    </ul>
+</div>
+before and after
+<div>before and after
+    after and before
+</div>
+<div><!--div consumes the block and new line but span just uses the space which text occupies-->
+    <span>
+        span
+    </span>
+</div>
+    <ol>
+        <li>point 1</li>
+        <li>point 2</li>
+    </ol>
+    <div>
+    <img src = https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png>
+        </div>
+        <hr>
+        <pre>
+            public void updateEmployeeTest(){
+                //given
+                Employee given = employeeDAO.findByEmail("absc@gmail.com");
+                //when
+                given.setLastname("Manivasagam");
+                given.setVacationHours(30);
+                Employee actual = employeeDAO.updateEmployee(given);
+                //then
+                Assertions.assertEquals(given.getLastname(),actual.getLastname());
+                Assertions.assertEquals(given.getVacationHours(), actual.getVacationHours());
+            }
+        </pre>
+        <hr>
+        <!-- This is a comment-->
+         <!-- this takes you to link-->
+        <a href="https://www.google.com/" target="_blank">This is a link to google</a>
+        <p><a href="">click to send me email</a></p>
 </body>
+
 </html>

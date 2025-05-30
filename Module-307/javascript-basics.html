@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--scrpt tags can be anywhere in the file and its better if we put it at top of body-->
+    <script>
+        // best practise is always use let when defining variables.
+        // only use var when we need it globally available to the document.
+        // else there may be a conflict between two global variables.
+        // This function call will fail in js because JavaScript is linear and function is defined below, but in java it will work because java is precompiled.
+        
+        abc();
+        // var is a global variable accessible by any function
+        var a=10;
+        var b="String";
+        var c = true;
+        function abc(){
+                let x=10;// scope of x is inside {}
+                var y= 20;
+                console.log(y);
+        }
+        // The function can be called here and it will work
+        abc();
+        // x is not available here because its lrt and defined inside the function
+        // y is available eventhough its inside function because it var and var is global.
+        console.log("Hello World");
+        console.log("hello"-"world");
+        console.log("1"+1);// 11
+        console.log(1+"1");// 11
+
+        let k = "KBA review";
+        console.log(k.lastIndexOf("e"));// 8
+        var i;
+        console.log(i);
+        console.log(i!=5);// true
+        //console.log(y)
+        // this is similart to system.out.prinln and writes to console on the browser inspect
+        let v1= "abc";
+        v1= "xyz";// let v1 ="xyz" will not be accepted by vs code
+        console.log(v1);
+        var v2="abc";
+        var v2="xyz";
+        console.log(v2);
+        let now = new Date("2019-01-24 18:31:44");
+        let date = new Date("Thu Jan 30 2009 08:31:44");
+        console.log(now.getMonth()=== date.getMonth());
+        let e1= 3==3;
+        let e2= 3=="3";
+        let e3 = "3" == "3";
+        // all three are true
+        //== compares values
+        let e4 = "3" === 3;// this is false
+        let e5 = 3===3; // this is true
+        // === compares type and value
+        // common ghotch
+        let o = "8";
+        console.log(o+8);
+        // this prints 88 in console, because o is a string, when one term is a string + does string concatenation
+        console.log(8+o);
+        let number = 5;
+        if(number<5){
+            console.log(number+ "is less than 5");
+        } else if(number==5){
+            console.log(number+ "is equal to 5");
+        }
+        try{
+            console.log(number);
+        }catch(error){
+            throw error;
+        }
+        //javascript value object can be much simpler than a java entity.
+        const person = {
+		firstName: "John", 
+		lastName: "Doe", 
+		age: 50, 
+		eyeColor: "blue"
+	};
+    // this can be a js object or python dictionary or a hash map..
+    // there are many different ways of accessing properties of a person
+    console.log(person.firstName);
+    console.log(person["firstName"]);
+
+    person.height = "5.9";
+    let key = "height";
+    console.log(person.height);
+    console.log(person["height"]);
+    console.log(person[key]);
+    // arrays are similar to java but they are much more flexible
+    let arr = [];
+    arr[1]= null;
+    arr[5] = 5;
+    arr[10] = 89;
+    arr[12] = 78;
+    console.log(arr);
+    console.log(arr+1);
+    console.log(arr.length);
+    let data ="a, b, c, d, e";
+    let dataArr = data.split(",");
+    console.log(dataArr);
+    // this is not possible.
+    //it will print NAN
+    
+    // another type of for loop
+    // for .... in it looks for keys and not values
+    for(let key in person){
+        console.log(key + " == " + person[key]);
+    }
+
+    // for....of loop it loops over value of array arr. it cannot be used for object
+    for(let value of arr){
+        console.log(value);
+    }
+    // there is also a for each loop.
+    // this is similar to java lambda
+    arr.forEach(element => {console.log("for each "  + element)})
+    let kba= [1,2,3,4,5, ];// there is empty spot after comma and it is also a part of array,
+    // so length of array is 6 not 5
+    kba.forEach(function(value, index, array){
+        array[index] = value*value;
+    });
+    console.log(kba.reverse().filter(function(x){
+        // when autoboxing from a number to a boolean.. in javascript
+        // when the result is 0 it means it will remove it from the list 
+        return x%5;
+    }))// result is 16, 9,4,1
+    </script>
+    <h1>JavaScript basics</h1>
+</body>
+</html>

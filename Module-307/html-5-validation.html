@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HTML validation</h1>
+    <!-- required makes the browser to say that the field is required , its little work for us
+     but difficult to customise the style.
+     email as input type will make sure that there is @ in the text box -->
+    <form action="">
+        <div> first Name<input type="text" required>
+        </div>
+        <div>
+            Last Name<input type = "text" required minlength="3" maxlength="5">
+        
+        </div>
+        <div>
+            Email<input type="email" required>
+        </div>
+        <div>
+            Age<input type = "number" required min="1" max="200">
+        </div>
+        <div>
+            Phone<input type="text" name="phone" pattern = "[789][0-9]{9}" >
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

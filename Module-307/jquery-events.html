@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--jquery is always loaded at the top-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Form validation with JQuery</h1>
+    <button id="b1" class="btnclass">button1</button>
+    <button id="b2" class="btnclass">button2</button>
+</body>
+<script>
+     $("#b1").click(function () {
+        console.log("The paragraph 1 was clicked.");
+    });
+    //this is same as function above just different syntax
+    $("#b1").on('click',function () {
+        console.log("The button1 clicked through alternate syntax.");
+    });
+    var color;
+    //this is mouse over
+    $("#b1,#b2").on('mouseenter',function () {
+        //not working find how it works
+        //color = $("#b1").css(background-color);
+        console.log("The button1 mouse over");
+        $("#b1").css("background-color", "green");
+        $("#b2").hide();
+    });
+    
+    //this is mouse exit
+    $("#b1").on('mouseout',function () {
+        console.log("The button1 mouse exited");
+        $("#b1").css("background-color", "lightgray");
+        $("#b2").show();
+    });
+    $("#b2").click(function () {
+        console.log("The paragraph 2 was clicked.");
+    });
+    $(".btnclass").click(function () {
+        console.log("All button listener clicked.");
+    });
+
+    // using raw java script
+    let h = document.getElementById("b1");
+    h.addEventListener("click", function(e){
+        console.log("Button click event handles by javascript");
+        console.log(e.currentTarget === this);
+    });
+</script>
+</html>

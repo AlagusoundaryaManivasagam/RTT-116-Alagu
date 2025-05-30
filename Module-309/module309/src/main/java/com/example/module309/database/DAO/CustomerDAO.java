@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
 @Repository
 public interface CustomerDAO extends JpaRepository<Customer, Long> {
     @Query("select c from Customer c where c.contactFirstname= :firstName")
@@ -14,6 +15,7 @@ public interface CustomerDAO extends JpaRepository<Customer, Long> {
     @Query("select c from Customer c where c.city = :city")
     List<Customer> findByCity(String city);
 
+    Customer findById(Integer customerId);
 }
 
 
