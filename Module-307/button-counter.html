@@ -21,7 +21,6 @@
     </div>
     <div>
         <button id="button1">counter2</button>
-        <span>counter for 1</span><span id="span1">0</span>
         <span>counter for 2</span><span id="span2">0</span>
         
     </div>
@@ -34,9 +33,7 @@
             var t = $("#span").text();
             var n= parseInt(t);
             $("#span").text(n+1);
-            var t3=$("#span1").text();
-            var n3=parseInt(t3);
-            $("#span1").text(n3+1);
+            
         })
         $("#button1").on("click",function(event){
             var t1 = $("#span").text();
