@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand+Pre:wght@400..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+    <div class="navbar"><h1>Booklog</h1></div>
+    <div class="container">
+        <div class="bookcontainer">
+            <h2>Totto chan</h2>
+            <h5>Tetsuko Kuroyanagi</h5>
+            <p>Story of a small girl and her special school in Japan</p>
+            <button onclick="deletebookcontainer(event)">Delete</button>
+        </div>
+    </div>
+    <div class="popup-overlay"></div>
+    <div class="popup-box">
+        <h2>Add book</h2>
+        <form action="">
+        <input type="text" placeholder="Enter Book title" id="book-title-input">
+        <input type="text" placeholder="Enter Author name" id="book-author-input">
+        <textarea placeholder="Enter short description" id="book-description-input"></textarea>
+        <button id="book-add">Add</button>
+        <button id="book-delete">Delete</button>
+        </form>
+    </div>
+    <button class="add-button">+</button>
+<script src="script.js"></script>
+</body>
+</html>
